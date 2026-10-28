@@ -1,0 +1,10 @@
+-- EXAMPLE ONLY: run as a database administrator and customize usernames.
+-- Never grant superuser to an application role.
+-- CREATE ROLE commerce_readonly LOGIN PASSWORD 'replace-with-managed-secret';
+-- GRANT CONNECT ON DATABASE sql_mastery TO commerce_readonly;
+-- GRANT USAGE ON SCHEMA commerce TO commerce_readonly;
+-- GRANT SELECT ON ALL TABLES IN SCHEMA commerce TO commerce_readonly;
+-- ALTER DEFAULT PRIVILEGES IN SCHEMA commerce GRANT SELECT ON TABLES TO commerce_readonly;
+--
+-- Prefer a separate migration owner and runtime application role.
+-- Store secrets in a managed secret store/environment, never in source control.

@@ -1,0 +1,17 @@
+erDiagram
+    CUSTOMERS ||--o{ CUSTOMER_ADDRESSES : has
+    CUSTOMERS ||--o{ CARTS : owns
+    CARTS ||--o{ CART_ITEMS : contains
+    PRODUCTS ||--o{ CART_ITEMS : selected
+    CUSTOMERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    PRODUCTS ||--o{ ORDER_ITEMS : snapshot_source
+    PRODUCTS ||--o{ PRODUCT_CATEGORIES : classified
+    CATEGORIES ||--o{ PRODUCT_CATEGORIES : groups
+    CATEGORIES o|--o{ CATEGORIES : parent_of
+    WAREHOUSES ||--o{ INVENTORY : stores
+    PRODUCTS ||--o{ INVENTORY : stocked
+    ORDERS ||--o{ PAYMENTS : payment_attempts
+    ORDERS ||--o{ SHIPMENTS : fulfilled_by
+    CUSTOMERS ||--o{ REVIEWS : writes
+    PRODUCTS ||--o{ REVIEWS : receives
